@@ -8,7 +8,7 @@
 
         Node(){}
         Node(int data): info(data), next(nullptr), prev(nullptr){}
-        Node(int data, Node* next): info(data), next(next, prev(prev)){}
+        Node(int data, Node* next): info(data), next(next), prev(prev){}
 };
 
 class Graph{
