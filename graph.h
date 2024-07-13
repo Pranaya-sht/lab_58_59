@@ -1,28 +1,29 @@
-#include<iostream>
-class Node{
+#ifndef GRAPH_H
+#define GRAPH_H
+
+#include <vector>
+
+class Graph {
+private:
+    std::vector<std::vector<int>> adjMatrix;
+    int vertexCount;
+    bool directed;
 
 public:
-    int info;
-    Node* next;
-    Node* prev;
-
-    Node(){}
-    Node(int data): info(data), next(nullptr), prev(nullptr){}
-    Node(int data, Node* next): info(data), next(next), prev(prev){}
+    Graph(bool isDirected = false);
+    bool isEmpty() const;
+    bool isDirected() const;
+    void addVertex();
+    void addEdge(int vertex1, int vertex2);
+    void removeVertex(int vertex);
+    void removeEdge(int vertex1, int vertex2);
+    int numVertices() const;
+    int numEdges() const;
+    int indegree(int vertex) const;
+    int outdegree(int vertex) const;
+    int degree(int vertex) const;
+    std::vector<int> neighbours(int vertex) const;
+    bool neighbour(int vertex1, int vertex2) const;
 };
 
-class Graph{
-    virtual bool isEmpty()=0;
-    virtual bool isDirected()=0;
-    virtual bool addVertex(Node vertex) =0;
-    virtual bool addEdge(Node vertex1, Node vertex2)=0;
-    virtual bool removerVertex(Node vertextoRemove)=0;
-    virtual bool removeEdge(Node vertex1, Node vertex2)=0;
-    virtual int numvertices()=0;
-    virtual int numEdge() =0;
-    virtual int indegree(Node vertex)=0;
-    virtual int outdegree(Node vertex)=0;
-    virtual int degree(Node vertex) =0;
-    virtual Node neighbours(Node vertex) =0;
-    virtual bool neighbour(Node vertex1, Node vertex2)=0;
-} ;
+#endif
