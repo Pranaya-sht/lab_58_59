@@ -17,7 +17,13 @@ public:
     void addEdge(int vertex1, int vertex2);
     void removeVertex(int vertex);
     void removeEdge(int vertex1, int vertex2);
-    
+    int numVertices() const;
+    int numEdges() const;
+    int indegree(int vertex) const;
+    int outdegree(int vertex) const;
+    int degree(int vertex) const;
+    std::vector<int> neighbours(int vertex) const;
+    bool neighbour(int vertex1, int vertex2) const;
 };
 
 #endif
