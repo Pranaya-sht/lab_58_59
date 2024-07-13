@@ -1,14 +1,14 @@
 #include<iostream>
-    class Node{
+class Node{
 
-    public:
-        int info;
-        Node* next;
-        Node* prev;
+public:
+    int info;
+    Node* next;
+    Node* prev;
 
-        Node(){}
-        Node(int data): info(data), next(nullptr), prev(nullptr){}
-        Node(int data, Node* next): info(data), next(next, prev(prev)){}
+    Node(){}
+    Node(int data): info(data), next(nullptr), prev(nullptr){}
+    Node(int data, Node* next): info(data), next(next), prev(prev){}
 };
 
 class Graph{
